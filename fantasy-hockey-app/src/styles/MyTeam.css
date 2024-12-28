@@ -1,0 +1,171 @@
+/* Hockey Rink Layout */
+.hockey-rink {
+  background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 20px;
+  padding: 40px 20px;
+  margin: 20px 0;
+  position: relative;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.1);
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 4px solid #1976d2;
+  overflow: hidden;
+}
+
+/* Player Rows */
+.hockey-rink .forwards-row,
+.hockey-rink .defense-row,
+.hockey-rink .goalie-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Player Cards */
+.hockey-rink .player-card {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 auto;
+  width: 200px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 20px 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid rgba(25, 118, 210, 0.1);
+}
+
+.hockey-rink .player-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Player Headshots */
+.hockey-rink .player-headshot {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 15px;
+  border-radius: 60px;
+  overflow: hidden;
+  background: #f0f0f0;
+  border: 3px solid #1976d2;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.hockey-rink .player-headshot img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Player Info */
+.hockey-rink .player-info {
+  width: 100%;
+  text-align: center;
+}
+
+.hockey-rink .player-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.hockey-rink .player-name {
+  font-size: 1.2em;
+  font-weight: 600;
+  text-align: center;
+  color: #1976d2;
+}
+
+.hockey-rink .player-team {
+  text-align: center;
+  color: #666;
+  font-size: 0.9em;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.hockey-rink .player-stats-container {
+  text-align: center;
+  background: rgba(25, 118, 210, 0.05);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.hockey-rink .stat-value {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Ice Rink Markings */
+.hockey-rink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at center, rgba(25, 118, 210, 0.1) 0%, transparent 60%),
+    linear-gradient(90deg, 
+      transparent 49.9%, 
+      rgba(25, 118, 210, 0.1) 50%, 
+      transparent 50.1%
+    );
+  background-size: 100% 100%, 40px 100%;
+  background-position: center center, 0 0;
+  background-repeat: no-repeat, repeat;
+  z-index: 1;
+}
+
+.hockey-rink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  background: rgba(204, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hockey-rink {
+    padding: 20px 10px;
+    min-height: auto;
+  }
+
+  .hockey-rink .forwards-row,
+  .hockey-rink .defense-row,
+  .hockey-rink .goalie-row {
+    gap: 10px;
+  }
+
+  .hockey-rink .player-card {
+    width: 150px;
+    padding: 15px 10px;
+  }
+
+  .hockey-rink .player-headshot {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hockey-rink .player-name {
+    font-size: 1.1em;
+  }
+} 
