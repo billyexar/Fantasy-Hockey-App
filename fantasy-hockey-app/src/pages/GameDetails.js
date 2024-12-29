@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import '../styles/GameDetails.css';
+import { API_URL } from '../api/config';
 
 function GameDetails() {
   const { id } = useParams();

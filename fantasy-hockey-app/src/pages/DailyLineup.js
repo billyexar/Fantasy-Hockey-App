@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { format, parseISO } from 'date-fns';
 import '../styles/DailyLineup.css';
+import { API_URL } from '../api/config';
 
 function DailyLineup() {
   const [availablePlayers, setAvailablePlayers] = useState([]);

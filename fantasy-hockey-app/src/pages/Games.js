@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { format, parseISO } from 'date-fns';
 import '../styles/Games.css';
+import { API_URL } from '../api/config';
 
 function Games() {
   const [gamesData, setGamesData] = useState(null);

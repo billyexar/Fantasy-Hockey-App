@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/LineupBuilder.css';
+import { API_URL } from '../api/config';
 
 function LineupBuilder() {
   const [budget, setBudget] = useState(200);
