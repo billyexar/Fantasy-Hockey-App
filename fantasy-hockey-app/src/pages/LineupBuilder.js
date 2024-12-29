@@ -84,7 +84,7 @@ function LineupBuilder() {
         }
 
         // If no cache or cache is old, fetch new data
-        const response = await fetch('http://localhost:5000/api/players');
+        const response = await fetch(`${API_URL}/api/players`);
         const data = await response.json();
         
         // Cache the new data

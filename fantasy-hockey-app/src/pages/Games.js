@@ -15,7 +15,7 @@ function Games() {
       try {
         setLoading(true);
         const formattedDate = format(date, 'yyyy-MM-dd');
-        const response = await fetch(`http://localhost:5000/api/games?date=${formattedDate}`);
+        const response = await fetch(`${API_URL}/api/games?date=${formattedDate}`);
         const data = await response.json();
         
         console.log('API Response:', data);

@@ -25,9 +25,9 @@ function GameDetails() {
         setLoading(true);
         
         const [gameResponse, boxscoreResponse, playByPlayResponse] = await Promise.all([
-          fetch(`http://localhost:5000/api/games/${id}`),
-          fetch(`http://localhost:5000/api/games/${id}/boxscore`),
-          fetch(`http://localhost:5000/api/games/${id}/play-by-play`)
+          fetch(`${API_URL}/api/games/${id}`),
+          fetch(`${API_URL}/api/games/${id}/boxscore`),
+          fetch(`${API_URL}/api/games/${id}/play-by-play`)
         ]);
 
         const [gameData, boxscoreData, playByPlayData] = await Promise.all([

@@ -41,8 +41,8 @@ function DailyLineup() {
         
         // Fetch both games data and players
         const [gamesResponse, playersResponse] = await Promise.all([
-          fetch(`http://localhost:5000/api/games?date=${formattedDate}`),
-          fetch(`http://localhost:5000/api/daily-players?date=${formattedDate}`)
+          fetch(`${API_URL}/api/games?date=${formattedDate}`),
+          fetch(`${API_URL}/api/daily-players?date=${formattedDate}`)
         ]);
 
         const gamesData = await gamesResponse.json();
@@ -97,7 +97,7 @@ function DailyLineup() {
 
     try {
       setIsSaving(true);
-      const response = await fetch('http://localhost:5000/api/lineups', {
+      const response = await fetch(`${API_URL}/api/lineups`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

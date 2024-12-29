@@ -3,7 +3,11 @@ const axios = require('axios');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: process.env.CORS_ORIGIN || 'https://fantasy-hockey-app.onrender.com',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 
 // API Base URLs
 const NHL_WEB_API = 'https://api-web.nhle.com';
